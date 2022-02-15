@@ -79,8 +79,8 @@ jobs:
         run: |
           cd openwrt
           make defconfig > /dev/null 2>&1
-          ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/config.txt
-          git add ${GITHUB_WORKSPACE}/config.txt
+          ./scripts/diffconfig.sh > .config
+          git add .config
           git commit -m "$config updata"
           git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
 
