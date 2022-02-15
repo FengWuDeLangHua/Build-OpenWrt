@@ -19,8 +19,6 @@ jobs:
     
       - name: 初始化
         uses: actions/checkout@main
-        with:
-          ref: master
 
       - name: 安装编译环境
         env:
