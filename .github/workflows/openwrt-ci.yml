@@ -75,5 +75,4 @@ jobs:
           cp -Rf $GITHUB_WORKSPACE/${CONFIG_FILE} ${CONFIG_FILE}
           git add .
           git commit -m "$config updata"
-          git remote set-url origin https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}"
-          git push --force
+          git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
