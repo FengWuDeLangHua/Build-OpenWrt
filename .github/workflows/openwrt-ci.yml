@@ -78,7 +78,7 @@ jobs:
         id: compileop
         run: |
           cd openwrt
-          make defconfig > /dev/null 2>&1
+          make defconfig
           ./scripts/diffconfig.sh > .config
           git add .config
           git commit -m "$config updata"
