@@ -26,6 +26,8 @@ jobs:
           sudo timedatectl set-timezone "$TZ"
           sudo mkdir -p /workdir
           sudo chown $USER:$GROUPS /workdir
+          git config --global user.email "FengWuDeLangHua@users.noreply.github.com"
+          git config --global user.name "FengWuDeLangHua"
           
       - name: 下载源码
         working-directory: /workdir
