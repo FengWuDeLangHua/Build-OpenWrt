@@ -23,6 +23,10 @@ jobs:
     steps:
       - name: 初始化
         uses: actions/checkout@main
+      
+      - name: 电报机器人通知
+        run: |
+          curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=🎉 主人：您正在编译Openwrt固件,请耐心等待...... 😋" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
 
       - name: 安装编译环境
         env:
