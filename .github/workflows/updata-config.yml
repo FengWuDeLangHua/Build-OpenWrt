@@ -12,7 +12,7 @@ env:
   TZ: Asia/Shanghai
   
 jobs:
-  updata_config:
+  updata-config:
     runs-on: ubuntu-latest
     
     steps:
