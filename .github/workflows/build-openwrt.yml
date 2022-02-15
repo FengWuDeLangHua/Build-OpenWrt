@@ -3,8 +3,6 @@ name: 编译OpenWrt
 on:
   workflow_dispatch:
   push:
-    branches:
-      - 'main'
     paths:
       - '.config'
       
