@@ -12,13 +12,10 @@ env:
   TZ: Asia/Shanghai
   
 jobs:
-
   updata_config:
-  
     runs-on: ubuntu-latest
     
     steps:
-    
       - name: 初始化
         uses: actions/checkout@main
 
@@ -85,5 +82,3 @@ jobs:
           git add .
           git commit -m "$config updata"
           git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
-
-  
