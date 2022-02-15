@@ -1,4 +1,4 @@
-name: 生成配置文件
+name: 更新配置文件
 
 on:
   workflow_dispatch:
@@ -76,7 +76,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           
-      - name: 生成"${{matrix.target}}"配置文件
+      - name: 更新配置文件
         id: compileop
         run: |
           cd openwrt
