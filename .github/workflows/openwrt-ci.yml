@@ -80,7 +80,7 @@ jobs:
           cd openwrt
           make defconfig > /dev/null 2>&1
           ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/config.txt
-          git add config.txt
+          git add ${GITHUB_WORKSPACE}/config.txt
           git commit -m "$config updata"
           git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
 
