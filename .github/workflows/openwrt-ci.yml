@@ -12,10 +12,13 @@ env:
   TZ: Asia/Shanghai
   
 jobs:
-  build_openwrt:
+
+  updata_config:
+  
     runs-on: ubuntu-latest
     
     steps:
+    
       - name: 初始化
         uses: actions/checkout@main
 
