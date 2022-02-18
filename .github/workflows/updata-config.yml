@@ -14,7 +14,7 @@ env:
   
 jobs:
   updata-config:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     
     steps:
       - name: 初始化
