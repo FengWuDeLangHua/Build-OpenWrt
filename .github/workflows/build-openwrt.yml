@@ -61,11 +61,11 @@ jobs:
           cd openwrt
           $GITHUB_WORKSPACE/$DIY_P2_SH
           
-#       - name: 缓存加速
-#         uses: klever1988/cachewrtbuild@main
-#         with:
-#           ccache: 'true'
-#           prefix: ${{ github.workspace }}/openwrt
+      - name: 缓存加速
+        uses: klever1988/cachewrtbuild@main
+        with:
+          ccache: 'true'
+          prefix: ${{ github.workspace }}/openwrt
           
       - name: 下载软件包
         run: |
