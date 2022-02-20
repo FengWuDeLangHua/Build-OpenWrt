@@ -35,19 +35,24 @@ jobs:
           git clone $REPO_URL -b $REPO_BRANCH openwrt
           ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
           
-      - name: 加载自定义文件
+      - name: 更新源
+        run: |
+          cd openwrt
+          ./scripts/feeds update -a
+          
+      - name: 加载自定义源
         run: |
           chmod +x $DIY_P1_SH
           cd openwrt
           $GITHUB_WORKSPACE/$DIY_P1_SH
           
-      - name: 更新自定义文件
+      - name: 安装源
         run: |
           cd openwrt
-          ./scripts/feeds update -a
+          ./scripts/feeds install -a
           ./scripts/feeds install -a
           
-      - name: 加载自定义设置
+      - name: 加载自定义配置
         run: |
           chmod +x $DIY_P2_SH
           cd openwrt
