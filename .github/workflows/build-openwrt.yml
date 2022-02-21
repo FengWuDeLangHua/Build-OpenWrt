@@ -7,8 +7,10 @@ on:
       - '.config'
       
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+#   REPO_URL: https://github.com/coolsnowwolf/lede
+#   REPO_BRANCH: master
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-18.06-k5.4
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
@@ -65,16 +67,16 @@ jobs:
           cd openwrt
           $GITHUB_WORKSPACE/$DIY_P2_SH
           
-      - name: 缓存加速
-        uses: klever1988/cachewrtbuild@main
-        with:
-          ccache: 'true'
-          prefix: ${{ github.workspace }}/openwrt
+#       - name: 缓存加速
+#         uses: klever1988/cachewrtbuild@main
+#         with:
+#           ccache: 'true'
+#           prefix: ${{ github.workspace }}/openwrt
           
       - name: 下载软件包
         run: |
           cd openwrt
-          echo -e 'CONFIG_DEVEL=y\nCONFIG_CCACHE=y' >> .config
+          # echo -e 'CONFIG_DEVEL=y\nCONFIG_CCACHE=y' >> .config
           make defconfig
           make download -j8
           find dl -size -1024c -exec ls -l {} \;
