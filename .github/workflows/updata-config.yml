@@ -81,5 +81,5 @@ jobs:
           fi
           cp -Rf $GITHUB_WORKSPACE/${CONFIG_FILE} ${CONFIG_FILE}
           git add .
-          git commit -m "$config updata"
+          git commit -m "编译OpenWrt"
           git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
