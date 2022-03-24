@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# rm -rf package/lean/luci-theme-argon
-# rm -rf feeds/packages/net/smartdns
-
-# svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns feeds/packages/net/smartdns
-# svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-smartdns package/lean/luci-app-smartdns
-# sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/lean/luci-app-smartdns/Makefile
-
 # git clone https://github.com/fw876/helloworld.git package/lean/helloworld
 git clone -b luci https://github.com/xiaorouji/openwrt-passwall package/lean/openwrt-passwall
 git clone -b packages https://github.com/xiaorouji/openwrt-passwall package/lean/openwrt-passwall
