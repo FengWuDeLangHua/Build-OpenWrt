@@ -2,7 +2,7 @@
 
 rm -rf feeds/packages/net/smartdns
 
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns package/lean/smartdns
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/smartdns feeds/packages/net/smartdns
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-smartdns package/lean/luci-app-smartdns
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-aliddns package/lean/luci-app-aliddns
 
