@@ -11,5 +11,3 @@
 
 # sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/lean/luci-app-smartdns/Makefile
 # sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/lean/luci-app-aliddns/Makefile
-
-
