@@ -70,7 +70,7 @@ jobs:
       - name: 缓存加速
         uses: klever1988/cachewrtbuild@main
         with:
-#           clean: true
+          clean: true
           ccache: true
           prefix: ${{ github.workspace }}/openwrt
           
