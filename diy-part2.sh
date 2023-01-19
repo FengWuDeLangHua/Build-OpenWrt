@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -i 's/PATCHVER:=5.15/PATCHVER:=5.19/g' target/linux/x86/Makefile
+sed -i 's/PATCHVER:=5.15/PATCHVER:=6.1/g' target/linux/x86/Makefile
 # sed -i 's/PATCHVER:=5.10/PATCHVER:=5.15/g' target/linux/x86/Makefile
 
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
