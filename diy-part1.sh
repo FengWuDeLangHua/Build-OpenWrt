@@ -2,7 +2,7 @@
 
 # rm -rf feeds/packages/net/smartdns
 
-git clone https://github.com/kenzok8/small-package package/lean/small
+git clone https://github.com/kenzok8/small-package package/lean/small-package
 # git clone https://github.com/fw876/helloworld.git package/lean/helloworld
 # git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
 # git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
