@@ -62,10 +62,10 @@ jobs:
           $GITHUB_WORKSPACE/$DIY_P2_SH
           
       - name: SSH链接
-        uses: P3TERX/ssh2actions@main
-        env:
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        uses: danshui-git/debugger-action@main
+#         env:
+#           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+#           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           
       - name: 更新配置文件
         run: |
