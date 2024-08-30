@@ -62,7 +62,14 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
-        
+
+    - name: Cache Acceleration
+      uses: klever1988/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        mixkey: 'ramips'
+        prefix: 'openwrt'
+
     - name: Download package
       working-directory: ./openwrt
       run: |
