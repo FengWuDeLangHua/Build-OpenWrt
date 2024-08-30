@@ -63,7 +63,7 @@ jobs:
       run: |
         cd openwrt
         make defconfig
-        ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/${CONFIG_FILE}
+        ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/$CONFIG_FILE
           
     - name: Upload Configuratio
       env:
@@ -71,10 +71,10 @@ jobs:
       run: |
         git clone -b main https://github.com/${{github.repository}}.git repo
         cd repo
-        if [[ -n "$(ls -A "${CONFIG_FILE}" 2>/dev/null)" ]]; then
-          git rm -rf ${CONFIG_FILE}
+        if [[ -n "$(ls -A "$CONFIG_FILE" 2>/dev/null)" ]]; then
+          git rm -rf $CONFIG_FILE
         fi
-        cp -Rf $GITHUB_WORKSPACE/${CONFIG_FILE} ${CONFIG_FILE}
+        cp -Rf $GITHUB_WORKSPACE/$CONFIG_FILE $CONFIG_FILE
         git add .
         git commit -m "编译OpenWrt"
         git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
