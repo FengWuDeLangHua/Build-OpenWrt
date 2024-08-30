@@ -77,4 +77,4 @@ jobs:
         cp -Rf $GITHUB_WORKSPACE/$CONFIG_FILE $CONFIG_FILE
         git add .
         git commit -m "编译OpenWrt"
-        git push --force "https://${REPO_TOKEN}@github.com/${{github.repository}}" HEAD:main
+        git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
