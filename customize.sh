@@ -22,7 +22,7 @@ git clone https://github.com/fw876/helloworld.git package/lean/helloworld
 rm -rf feeds/packages/net/smartdns -rf
 rm -rf feeds/luci/applications/luci-app-smartdns -rf
 git clone https://github.com/pymumu/openwrt-smartdns.git feeds/packages/net/smartdns
-git clone -b lede https://github.com/pymumu/luci-app-smartdns.git
+git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/lean/luci-app-smartdns
 
 rm -rf feeds/packages/net/mosdns -rf
 rm -rf feeds/luci/applications/luci-app-mosdns -rf
