@@ -58,12 +58,16 @@ jobs:
       uses: csexton/debugger-action@master
    
     - name: Update Configuration
+      env:
+        CONFIG_FILE: '.config'
       run: |
         cd openwrt
         make defconfig
         ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/${CONFIG_FILE}
           
     - name: Upload Configuratio
+      env:
+        CONFIG_FILE: '.config'
       run: |
         git clone -b main https://github.com/${{github.repository}}.git repo
         cd repo
