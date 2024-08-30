@@ -2,7 +2,13 @@ name: 更新配置文件
 
 on:
   workflow_dispatch:
-
+    inputs:
+      SSH_ACTION:
+        description: 'SSH远程配置固件'
+        required: false
+        default: 'true'
+        type: boolean
+        
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,6 +60,7 @@ jobs:
         cd openwrt && make defconfig
           
     - name: SSH
+      if: env.SSH_ACTION == 'true'
       # uses: danshui-git/debugger-action@main
       uses: csexton/debugger-action@master
    
