@@ -3,9 +3,6 @@ name: 编译OpenWrt
 on:
   workflow_dispatch:
       
-env:
-  CONFIG_FILE: .config
-  
 jobs:
   build-openwrt:
     runs-on: ubuntu-latest
