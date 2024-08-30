@@ -69,8 +69,8 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        git clone -b main https://github.com/${{github.repository}}.git repo
-        cd repo
+        git clone https://user:${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}.git UPLOAD
+        cd UPLOAD
         if [[ -n "$(ls -A "$CONFIG_FILE" 2>/dev/null)" ]]; then
           git rm -rf $CONFIG_FILE
         fi
