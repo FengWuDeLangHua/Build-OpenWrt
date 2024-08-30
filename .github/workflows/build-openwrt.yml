@@ -66,18 +66,12 @@ jobs:
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
-    - name: Clean File
-      run: |
-        cd openwrt/bin/targets/*/*
-        find -name "*buildinfo*" | xargs -i rm -rf {}
-        find -name "*sha256sums*" | xargs -i rm -rf {}
-        find -name "*manifest*" | xargs -i rm -rf {}
-        find -name "*vmlinuz*" | xargs -i rm -rf {}
-        find -name "*Image*" | xargs -i rm -rf {}
-        find -name "*rootfs*" | xargs -i rm -rf {}
-        find -name "*kernel*" | xargs -i rm -rf {}
-        rm -rf packages
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
+    # - name: Clean File
+    #   run: |
+    #     cd openwrt/bin/targets/*/*
+    #     find -name "*buildinfo*" | xargs -i rm -rf {}
+    #     rm -rf packages
+    #     echo "FIRMWARE=$PWD" >> $GITHUB_ENV
           
     - name : Upload artifact
       uses: actions/upload-artifact@master
