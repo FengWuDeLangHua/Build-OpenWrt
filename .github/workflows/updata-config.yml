@@ -15,11 +15,10 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo timedatectl set-timezone "$TZ"
+        curl -s https://build-scripts.immortalwrt.eu.org/init_build_environment.sh | sudo bash
+        sudo timedatectl set-timezone "Asia/Shanghai"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-        git config --global user.email "FengWuDeLangHua@users.noreply.github.com"
-        git config --global user.name "FengWuDeLangHua"
           
     - name: Clone source code
       env: 
