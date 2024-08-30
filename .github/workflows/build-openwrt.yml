@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
       
 jobs:
-  build-openwrt:
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -65,7 +65,7 @@ jobs:
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-          
+
     - name: Build firmware
       working-directory: ./openwrt
       run: |
@@ -82,5 +82,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: ${{ env.FIRMWARE }}
+        name: OpenWrt
+        path: openwrt/bin
