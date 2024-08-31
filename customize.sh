@@ -17,6 +17,12 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git openwrt/pac
 sed -i 's/luci-theme-bootstrap/luci-theme-argon-jerrykuku/g' openwrt/feeds/luci/collections/luci/Makefile
 
 #4
+rm -rf openwrt/feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x openwrt/feeds/packages/lang/golang
+
+rm -rf openwrt/feeds/packages/lang/node
+git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt -b packages-23.05 openwrt/feeds/packages/lang/node
+
 git clone https://github.com/fw876/helloworld.git openwrt/package/lean/helloworld
 
 rm -rf openwrt/feeds/packages/net/smartdns -rf
