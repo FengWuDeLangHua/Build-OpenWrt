@@ -29,21 +29,21 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         bash <(curl -fsSL https://raw.githubusercontent.com/281677160/common/main/custom/ubuntu.sh)
-        if [[ $? -ne 0 ]];then
-          TIME r "依赖安装失败，请检测网络后再次尝试!"
-          exit 1
-        else
-          sudo sh -c 'echo openwrt > /etc/oprelyon'
-          TIME b "全部依赖安装完毕"
-        fi
-        if [[ `gcc --version |grep -c "buntu 13"` -eq '0' ]]; then
-          sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-          sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa
-          sudo apt-get install -y gcc-13
-          sudo apt-get install -y g++-13
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 60 --slave /usr/bin/g++ g++ /usr/bin/g++-13
-          gcc --version
-        fi
+        # if [[ $? -ne 0 ]];then
+        #   TIME r "依赖安装失败，请检测网络后再次尝试!"
+        #   exit 1
+        # else
+        #   sudo sh -c 'echo openwrt > /etc/oprelyon'
+        #   TIME b "全部依赖安装完毕"
+        # fi
+        # if [[ `gcc --version |grep -c "buntu 13"` -eq '0' ]]; then
+        #   sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+        #   sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa
+        #   sudo apt-get install -y gcc-13
+        #   sudo apt-get install -y g++-13
+        #   sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 60 --slave /usr/bin/g++ g++ /usr/bin/g++-13
+        #   gcc --version
+        # fi
         sudo timedatectl set-timezone "Asia/Shanghai"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
