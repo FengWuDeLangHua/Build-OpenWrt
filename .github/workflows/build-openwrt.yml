@@ -33,7 +33,7 @@ jobs:
         #   TIME r "依赖安装失败，请检测网络后再次尝试!"
         #   exit 1
         # else
-        #   sudo sh -c 'echo openwrt > /etc/oprelyon'
+          sudo sh -c 'echo openwrt > /etc/oprelyon'
         #   TIME b "全部依赖安装完毕"
         # fi
         if [[ `gcc --version |grep -c "buntu 13"` -eq '0' ]]; then
