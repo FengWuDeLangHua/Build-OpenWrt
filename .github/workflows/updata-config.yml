@@ -52,7 +52,6 @@ jobs:
         cd openwrt && make defconfig
           
     - name: SSH
-      if: env.SSH_ACTION == 'true'
       # uses: danshui-git/debugger-action@main
       uses: csexton/debugger-action@master
    
