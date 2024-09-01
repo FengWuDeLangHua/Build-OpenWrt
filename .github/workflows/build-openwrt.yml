@@ -84,15 +84,20 @@ jobs:
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 V=s
 
-    # - name: Clean File
-    #   run: |
-    #     cd openwrt/bin/targets/*/*
-    #     find -name "*buildinfo*" | xargs -i rm -rf {}
-    #     rm -rf packages
-    #     echo "FIRMWARE=$PWD" >> $GITHUB_ENV
+    - name: Clean File
+      run: |
+        cd openwrt/bin/targets/*/*
+        find -name "*buildinfo*" | xargs -i rm -rf {}
+        find -name "*manifest*" | xargs -i rm -rf {}
+        find -name "*bin*" | xargs -i rm -rf {}
+        find -name "*rootfs*" | xargs -i rm -rf {}
+        find -name "*profiles*" | xargs -i rm -rf {}
+        find -name "*sha256sums*" | xargs -i rm -rf {}
+        rm -rf packages
+        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
           
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: openwrt/bin
+        path: ${{ env.FIRMWARE_PATH }}
