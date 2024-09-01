@@ -89,8 +89,8 @@ jobs:
         cd openwrt/bin/targets/*/*
         find -name "*buildinfo*" | xargs -i rm -rf {}
         find -name "*manifest*" | xargs -i rm -rf {}
-        find -name "*bin*" | xargs -i rm -rf {}
-        find -name "*rootfs*" | xargs -i rm -rf {}
+        find -name "*kernel.bin*" | xargs -i rm -rf {}
+        find -name "*rootfs.img.gz*" | xargs -i rm -rf {}
         find -name "*profiles*" | xargs -i rm -rf {}
         find -name "*sha256sums*" | xargs -i rm -rf {}
         rm -rf packages
