@@ -15,7 +15,7 @@ sed -i '/CYXluq4wUazHjmCDBCqXF/d' openwrt/package/emortal/default-settings/files
 # #3. Replace with JerryKuKu’s Argon
 # rm -rf openwrt/package/lean/luci-theme-argon
 rm -rf openwrt/luci/themes/luci-theme-argon
-git clone  https://github.com/jerrykuku/luci-theme-argon.git openwrt/luci/themes/luci-theme-argon-jerrykuku
+git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/luci/themes/luci-theme-argon-jerrykuku
 sed -i 's/luci-theme-bootstrap/luci-theme-argon-jerrykuku/g' openwrt/feeds/luci/collections/luci/Makefile
 
 # #4
