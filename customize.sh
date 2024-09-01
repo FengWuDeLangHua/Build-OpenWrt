@@ -10,11 +10,13 @@ sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/confi
 
 #2. Clear the login password
 # sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-settings/files/zzz-default-settings
+sed -i '/CYXluq4wUazHjmCDBCqXF/d' openwrt/package/emortal/default-settings/files/99-default-settings
 
 # #3. Replace with JerryKuKu’s Argon
 # rm -rf openwrt/package/lean/luci-theme-argon
-# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git openwrt/package/lean/luci-theme-argon-jerrykuku
-# sed -i 's/luci-theme-bootstrap/luci-theme-argon-jerrykuku/g' openwrt/feeds/luci/collections/luci/Makefile
+rm -rf openwrt/luci/tree/themes/luci-theme-argon
+git clone  https://github.com/jerrykuku/luci-theme-argon.git openwrt/luci/tree/themes/luci-theme-argon-jerrykuku
+sed -i 's/luci-theme-bootstrap/luci-theme-argon-jerrykuku/g' openwrt/feeds/luci/collections/luci/Makefile
 
 # #4
 # git clone https://github.com/fw876/helloworld.git openwrt/package/lean/helloworld
