@@ -21,11 +21,17 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 # #4
 # git clone https://github.com/fw876/helloworld.git openwrt/package/lean/helloworld
 
-# # rm -rf openwrt/feeds/packages/net/smartdns
-# # rm -rf openwrt/feeds/luci/applications/luci-app-smartdns
-# # git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/feeds/packages/net/smartdns
-# # git clone -b lede https://github.com/pymumu/luci-app-smartdns.git openwrt/package/lean/luci-app-smartdns
+# rm -rf openwrt/feeds/packages/net/smartdns
+# rm -rf openwrt/feeds/luci/applications/luci-app-smartdns
+# git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/feeds/packages/net/smartdns
+# git clone -b lede https://github.com/pymumu/luci-app-smartdns.git openwrt/package/lean/luci-app-smartdns
 
 # rm -rf openwrt/feeds/packages/net/mosdns
 # rm -rf openwrt/feeds/luci/applications/luci-app-mosdns
 # git clone https://github.com/sbwml/luci-app-mosdns.git openwrt/package/lean/luci-app-mosdns
+
+find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+find ./ | grep Makefile | grep mosdns | xargs rm -f
+
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 openwrt/package/lean/mosdns
+git clone https://github.com/sbwml/v2ray-geodata openwrt/package/lean/v2ray-geodata
