@@ -13,13 +13,14 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 # sed -i '/CYXluq4wUazHjmCDBCqXF/d' openwrt/package/emortal/default-settings/files/99-default-settings
 
 # #3. Replace with JerryKuKu’s Argon
-# rm -rf openwrt/package/lean/luci-theme-argon
 rm -rf openwrt/feeds/luci/themes/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/themes/luci-theme-argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
+# git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/themes/luci-theme-argon
+# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/themes/luci-theme-argon
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci/Makefile
 
 # #4
-# git clone https://github.com/fw876/helloworld.git openwrt/package/emortal/helloworld
+# git clone https://github.com/fw876/helloworld.git openwrt/package/lean/helloworld
 
 # rm -rf openwrt/feeds/packages/net/smartdns
 # rm -rf openwrt/feeds/luci/applications/luci-app-smartdns
@@ -36,4 +37,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 # git clone https://github.com/sbwml/v2ray-geodata openwrt/package/emortal/v2ray-geodata
 
 # rm -rf openwrt/feeds/luci/applications/luci-app-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/emortal/openwrt-passwall
+# git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/emortal/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/lean/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/lean/openwrt-passwall
