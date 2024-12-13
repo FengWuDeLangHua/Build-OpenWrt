@@ -36,7 +36,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 # git clone https://github.com/sbwml/luci-app-mosdns -b v5 openwrt/package/emortal/mosdns
 # git clone https://github.com/sbwml/v2ray-geodata openwrt/package/emortal/v2ray-geodata
 
-# rm -rf openwrt/feeds/luci/applications/luci-app-passwall
+rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 # git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/emortal/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/lean/openwrt-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/lean/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/lean/openwrt-passwall-packages
