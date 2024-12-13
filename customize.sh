@@ -9,8 +9,8 @@
 sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/config_generate
 
 #2. Clear the login password
-# sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-settings/files/zzz-default-settings
-sed -i '/CYXluq4wUazHjmCDBCqXF/d' openwrt/package/emortal/default-settings/files/99-default-settings
+sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-settings/files/zzz-default-settings
+# sed -i '/CYXluq4wUazHjmCDBCqXF/d' openwrt/package/emortal/default-settings/files/99-default-settings
 
 # #3. Replace with JerryKuKu’s Argon
 # rm -rf openwrt/package/lean/luci-theme-argon
@@ -35,5 +35,5 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 # git clone https://github.com/sbwml/luci-app-mosdns -b v5 openwrt/package/emortal/mosdns
 # git clone https://github.com/sbwml/v2ray-geodata openwrt/package/emortal/v2ray-geodata
 
-rm -rf openwrt/feeds/luci/applications/luci-app-passwall
+# rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/emortal/openwrt-passwall
