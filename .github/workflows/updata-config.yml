@@ -15,7 +15,6 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        # sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
         sudo -E apt-get -qq update -y
         sudo -E apt-get -qq install -y gawk git gettext libssl-dev xsltproc zip git-core wget curl grep python2.7 python3 python3-pip libpython3-dev
         sudo timedatectl set-timezone "Asia/Shanghai"
@@ -24,8 +23,6 @@ jobs:
           
     - name: Clone source code
       env: 
-        # REPO_URL: https://github.com/coolsnowwolf/lede
-        # REPO_BRANCH: master
         REPO_URL: https://github.com/immortalwrt/immortalwrt
         REPO_BRANCH: openwrt-24.10
       run: |
@@ -43,12 +40,10 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
           
     - name: SSH
-      # uses: danshui-git/debugger-action@main
       uses: csexton/debugger-action@master
    
     - name: Update Configuration
