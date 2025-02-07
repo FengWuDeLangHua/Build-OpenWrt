@@ -17,6 +17,6 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/t
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
 
 #4
-# rm -rf openwrt/feeds/luci/applications/luci-app-passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/emortal/openwrt-passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/emortal/openwrt-passwall-packages
+rm -rf openwrt/feeds/luci/applications/luci-app-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/emortal/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/emortal/openwrt-passwall-packages
