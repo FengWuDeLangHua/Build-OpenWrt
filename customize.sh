@@ -19,6 +19,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 
 # #4
 rm -rf openwrt/feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/package/lean/openwrt-smartdns
 git clone https://github.com/pymumu/luci-app-smartdns.git openwrt/package/lean/luci-app-smartdns
 
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall
