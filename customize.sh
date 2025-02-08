@@ -23,5 +23,5 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 # rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 # git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/emortal/openwrt-passwall
 # git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/emortal/openwrt-passwall-packages
-git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/lean/openwrt-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/lean/openwrt-passwall-packages
+# git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/lean/openwrt-passwall
+# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/lean/openwrt-passwall-packages
