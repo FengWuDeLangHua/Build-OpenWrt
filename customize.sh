@@ -18,14 +18,13 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/t
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
 
 # #4
+rm -rf openwrt/feeds/package/net/smartdns
 rm -rf openwrt/feeds/luci/applications/luci-app-smartdns
-git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/package/lean/openwrt-smartdns
-git clone https://github.com/pymumu/luci-app-smartdns.git openwrt/package/lean/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/feeds/package/net/openwrt-smartdns
+git clone https://github.com/pymumu/luci-app-smartdns.git openwrt/feeds/luci/applications/luci-app-smartdns
 
-rm -rf openwrt/feeds/luci/applications/luci-app-passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/emortal/openwrt-passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/emortal/openwrt-passwall-packages
-git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/lean/openwrt-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/lean/openwrt-passwall-packages
+rm -rf openwrt/feeds/luci/applications/luci-app-passwal
+git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/feeds/luci/applications/luci-app-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/feeds/package/net/openwrt-passwall-packages
 
 
