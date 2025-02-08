@@ -13,9 +13,11 @@ sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/confi
 sed -i '/CYXluq4wUazHjmCDBCqXF/d' openwrt/package/lean/default-settings/files/zzz-default-settings
 
 #3. Replace with JerryKuKu’s Argon
-# rm -rf openwrt/feeds/luci/themes/luci-theme-argon
+rm -rf openwrt/feeds/luci/themes/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/themes/luci-theme-argon
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/themes/luci-theme-argon
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
 
 # #4
 # rm -rf openwrt/feeds/luci/applications/luci-app-passwall
