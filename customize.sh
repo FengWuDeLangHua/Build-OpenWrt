@@ -24,6 +24,7 @@ git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/feeds/package/n
 git clone https://github.com/pymumu/luci-app-smartdns.git openwrt/feeds/luci/applications/luci-app-smartdns
 
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall
+rm -rf openwrt/feeds/luci/applications/luci-app-passwall2
 git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/feeds/luci/applications/luci-app-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/feeds/package/net/openwrt-passwall-packages
 
