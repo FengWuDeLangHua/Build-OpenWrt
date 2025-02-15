@@ -18,10 +18,10 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/t
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
 
 # #4
-rm -rf openwrt/feeds/package/net/smartdns
-rm -rf openwrt/feeds/luci/applications/luci-app-smartdns
-git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/feeds/package/net/openwrt-smartdns
-git clone https://github.com/pymumu/luci-app-smartdns.git openwrt/feeds/luci/applications/luci-app-smartdns
+# rm -rf openwrt/feeds/package/net/smartdns
+# rm -rf openwrt/feeds/luci/applications/luci-app-smartdns
+# git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/feeds/package/net/openwrt-smartdns
+# git clone https://github.com/pymumu/luci-app-smartdns.git openwrt/feeds/luci/applications/luci-app-smartdns
 
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall2
