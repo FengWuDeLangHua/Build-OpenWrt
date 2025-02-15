@@ -12,6 +12,8 @@ sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/luci2/bin/confi
 # sed -i '/CYXluq4wUazHjmCDBCqXF/d' openwrt/package/emortal/default-settings/files/99-default-settings
 sed -i '/CYXluq4wUazHjmCDBCqXF/d' openwrt/package/lean/default-settings/files/zzz-default-settings
 
+sed -i 's/"终端"/"TTYD"/g' openwrt/feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
+
 #3. Replace with JerryKuKu’s Argon
 rm -rf openwrt/feeds/luci/themes/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/themes/luci-theme-argon
