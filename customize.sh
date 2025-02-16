@@ -22,11 +22,4 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 #4
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall2
-git clone https://github.com/kenzok8/small.git openwrt/package/lean/small
-rm -rf openwrt/package/lean/small/{*passwall*,*bypass*,*homeproxy*,*mihomo*}
-rm -rf openwrt/feeds/luci/applications/luci-app-mosdns
-rm -rf openwrt/feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
-rm -rf openwrt/feeds/packages/utils/v2dat
-rm -rf openwrt/feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang openwrt/feeds/packages/lang/golang
-
+rm -rf openwrt/feeds/small/{*passwall*,*bypass*,*homeproxy*,*mihomo*}
