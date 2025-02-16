@@ -19,17 +19,14 @@ rm -rf openwrt/feeds/luci/themes/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/feeds/luci/themes/luci-theme-argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
 
-# #4
-git clone https://github.com/fw876/helloworld.git openwrt/package/lean/helloworld
-
-# rm -rf openwrt/feeds/package/net/smartdns
-# rm -rf openwrt/feeds/luci/applications/luci-app-smartdns
-# git clone https://github.com/pymumu/openwrt-smartdns.git openwrt/feeds/package/net/openwrt-smartdns
-# git clone https://github.com/pymumu/luci-app-smartdns.git openwrt/feeds/luci/applications/luci-app-smartdns
-
+#4
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall2
-# git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/feeds/luci/applications/luci-app-passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/feeds/package/net/openwrt-passwall-packages
-
+git clone https://github.com/kenzok8/small.git openwrt/package/lean/small
+rm -rf openwrt/package/lean/small/{*passwall*,*bypass*,*homeproxy*,*mihomo*}
+rm -rf openwrt/feeds/luci/applications/luci-app-mosdns
+rm -rf openwrt/feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf openwrt/feeds/packages/utils/v2dat
+rm -rf openwrt/feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang openwrt/feeds/packages/lang/golang
 
