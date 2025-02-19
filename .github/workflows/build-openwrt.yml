@@ -38,21 +38,22 @@ jobs:
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt
                   
-    - name: Update & Install feeds
+    - name: Update feeds
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
         
     - name: Configuration Customization - Build_x86_64
+      working-directory: ./openwrt
       env:
         CONFIG_FILE: '.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
-        cd openwrt && make defconfig
+        ./scripts/feeds update -a
         ./scripts/feeds install -a
+        make defconfig
           
     - name: Cache Acceleration
       uses: klever1988/cachewrtbuild@main
@@ -74,8 +75,9 @@ jobs:
         make -j$(nproc) || make -j1 V=s
 
     - name: Clean File
+      working-directory: ./openwrt
       run: |
-        cd openwrt/bin/targets/*/*
+        cd bin/targets/*/*
         find -name "*buildinfo*" | xargs -i rm -rf {}
         find -name "*manifest*" | xargs -i rm -rf {}
         find -name "*kernel.bin*" | xargs -i rm -rf {}
