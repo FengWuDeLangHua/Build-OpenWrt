@@ -22,9 +22,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 #4
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall2
-rm -rf openwrt/feeds/packages/net/{xray*,v2ray*,v2ray*,sing*,chinadns-ng,trojan*,dns2socks,dns2tcp,geoview,microsocks,pdnsd-alt,tcping}
+rm -rf openwrt/feeds/packages/net/{xray*,v2ray*,sing*,chinadns-ng,microsocks,pdnsd-alt}
 rm -rf openwrt/feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang openwrt/feeds/packages/lang/golang
 git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/feeds/luci/applications/openwrt-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/feeds/packages/net
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/feeds/packages/net/openwrt-passwall-package
 
