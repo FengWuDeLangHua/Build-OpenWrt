@@ -33,14 +33,19 @@ jobs:
           
     - name: Update & Install feeds
       working-directory: ./openwrt
-      env:
-        CONFIG_FILE: '.config'
       run: |
         ./scripts/feeds update -a
-        chmod +x ./customize.sh && ./customize.sh
         ./scripts/feeds install -a
-        make defconfig
-       
+          
+    - name: Configuration Customization - Build_x86_64
+      env:
+        CONFIG_FILE: '.config'
+      working-directory: ./openwrt
+      run: |
+        chmod +x ./customize.sh && ./customize.sh
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+          
     - name: SSH
       uses: csexton/debugger-action@master
    
