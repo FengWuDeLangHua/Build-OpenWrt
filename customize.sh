@@ -22,3 +22,5 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 #4
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall2
+git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/lean/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/lean/openwrt-passwall-packages
