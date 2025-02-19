@@ -29,7 +29,6 @@ jobs:
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt
           
     - name: Update feeds
       working-directory: ./openwrt
@@ -37,9 +36,9 @@ jobs:
         ./scripts/feeds update -a
           
     - name: Configuration Customization - Build_x86_64
+      working-directory: ./openwrt
       env:
         CONFIG_FILE: '.config'
-      working-directory: ./openwrt
       run: |
         chmod +x ./customize.sh && ./customize.sh
         ./scripts/feeds update -a
@@ -49,10 +48,10 @@ jobs:
       uses: csexton/debugger-action@master
    
     - name: Update Configuration
+      working-directory: ./openwrt
       env:
         CONFIG_FILE: '.config'
       run: |
-        cd openwrt
         make defconfig
         ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/$CONFIG_FILE
           
