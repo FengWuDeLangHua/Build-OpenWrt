@@ -40,7 +40,7 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        chmod +x customize.sh && customize.sh
+        chmod +x customize.sh && $GITHUB_WORKSPACE/customize.sh
         ./scripts/feeds update -a
         ./scripts/feeds install -a
           
