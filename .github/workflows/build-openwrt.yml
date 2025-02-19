@@ -40,17 +40,16 @@ jobs:
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
                   
     - name: Update feeds
-      working-directory: ./openwrt
       run: |
-        ./scripts/feeds update -a
+        cd openwrt && ./scripts/feeds update -a
         
     - name: Configuration Customization - Build_x86_64
-      working-directory: ./openwrt
       env:
         CONFIG_FILE: '.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x ./customize.sh && ./customize.sh
+        chmod +x .customize.sh 
+        cd openwrt && customize.sh
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         make defconfig
@@ -62,22 +61,21 @@ jobs:
         prefix: ${{ github.workspace }}/openwrt
           
     - name: Download package
-      working-directory: ./openwrt
       run: |
+        cd openwrt
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
     - name: Build firmware
-      working-directory: ./openwrt
       run: |
+        cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 V=s
 
     - name: Clean File
-      working-directory: ./openwrt
       run: |
-        cd bin/targets/*/*
+        cd openwrt/bin/targets/*/*
         find -name "*buildinfo*" | xargs -i rm -rf {}
         find -name "*manifest*" | xargs -i rm -rf {}
         find -name "*kernel.bin*" | xargs -i rm -rf {}
