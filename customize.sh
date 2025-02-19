@@ -22,4 +22,3 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 #4
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall
 rm -rf openwrt/feeds/luci/applications/luci-app-passwall2
-rm -rf openwrt/feeds/small/{*passwall*,*bypass*,*homeproxy*,*mihomo*}
