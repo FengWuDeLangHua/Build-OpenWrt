@@ -35,7 +35,6 @@ jobs:
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
           
     - name: Configuration Customization - Build_x86_64
       env:
@@ -43,6 +42,7 @@ jobs:
       run: |
         chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
+        ./scripts/feeds install -a
           
     - name: SSH
       uses: csexton/debugger-action@master
