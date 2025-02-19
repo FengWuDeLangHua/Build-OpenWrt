@@ -25,6 +25,6 @@ rm -rf openwrt/feeds/luci/applications/luci-app-passwall2
 rm -rf openwrt/feeds/packages/net/{xray*,v2ray*,v2ray*,sing*,chinadns-ng,trojan*,dns2socks,dns2tcp,geoview,microsocks,pdnsd-alt,tcping}
 rm -rf openwrt/feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang openwrt/feeds/packages/lang/golang
-git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/package/lean/openwrt-passwall
-git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/package/lean/openwrt-passwall-packages
+git clone https://github.com/xiaorouji/openwrt-passwall.git openwrt/feeds/luci/applications/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages.git openwrt/feeds/packages/net
 
