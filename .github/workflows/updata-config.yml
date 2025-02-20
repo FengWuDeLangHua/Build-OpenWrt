@@ -23,8 +23,6 @@ jobs:
           
     - name: Clone source code
       env: 
-        # REPO_URL: https://github.com/immortalwrt/immortalwrt
-        # REPO_BRANCH: openwrt-24.10
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
       run: |
@@ -32,10 +30,9 @@ jobs:
         cd openwrt
           
     - name: Update & Install feeds
-      working-directory: ./openwrt
       run: |
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
+        cd openwrt && ./scripts/feeds update -a
+        cd openwrt && ./scripts/feeds install -a
           
     - name: Configuration Customization - Build_x86_64
       env:
@@ -51,8 +48,7 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        cd openwrt
-        make defconfig
+        cd openwrt && make defconfig
         ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/$CONFIG_FILE
           
     - name: Upload Configuratio
