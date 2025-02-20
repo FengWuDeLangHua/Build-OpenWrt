@@ -26,7 +26,7 @@ rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,microsoc
 rm -rf feeds/packages/utils/v2dat
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
-$svn https://github.com/kenzok8/small/tree/master/v2dat feeds/packages/utils/v2dat
+$svn https://github.com/kenzok8/small/trunk/v2dat feeds/packages/utils/v2dat
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/lean/openwrt-passwall-package
 cp -Rf package/lean/openwrt-passwall-package/* feeds/packages/net/
