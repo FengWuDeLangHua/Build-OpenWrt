@@ -39,7 +39,6 @@ jobs:
         CONFIG_FILE: '.config'
       run: |
         chmod +x ./customize.sh && ./customize.sh
-        cd openwrt && make defconfig
           
     - name: SSH
       uses: csexton/debugger-action@master
