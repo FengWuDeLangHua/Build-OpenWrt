@@ -38,7 +38,8 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        chmod +x ./customize.sh && ./customize.sh
+        chmod +x ./customize.sh
+        cd openwrt && ./customize.sh
           
     - name: SSH
       uses: csexton/debugger-action@master
