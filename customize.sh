@@ -22,7 +22,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-l
 #4
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
-rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,microsocks,pdnsd-alt}
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 git clone https://github.com/xiaorouji/openwrt-passwall.git feeds/luci/applications/openwrt-passwall
