@@ -27,5 +27,5 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 git clone https://github.com/xiaorouji/openwrt-passwall.git feeds/luci/applications/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git feeds/packages/net/openwrt-passwall-package
-mv -rf feeds/packages/net/openwrt-passwall-package/* feeds/packages/net/
+mv -f feeds/packages/net/openwrt-passwall-package/* feeds/packages/net/
 
