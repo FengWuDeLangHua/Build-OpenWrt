@@ -25,5 +25,5 @@ rm -rf feeds/luci/applications/luci-app-passwall
 # rm -rf feeds/luci/applications/luci-app-passwall2
 # git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
 # git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/lean/openwrt-passwall-package
-git clone https://github.com/fw876/helloworld.git package/emortal/helloworld
+# git clone https://github.com/fw876/helloworld.git package/emortal/helloworld
 
