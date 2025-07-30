@@ -46,7 +46,8 @@ jobs:
         cd openwrt && $GITHUB_WORKSPACE/customize.sh
           
     - name: SSH
-      uses: csexton/debugger-action@master
+      # uses: csexton/debugger-action@master
+      uses: danshui-git/debugger-action@main
    
     - name: Update Configuration
       env:
