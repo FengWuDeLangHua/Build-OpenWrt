@@ -28,6 +28,6 @@ rm -rf feeds/luci/applications/luci-app-openclash
 # git clone https://github.com/immortalwrt/homeproxy.git feeds/luci/applications/luci-app-homeproxy
 # git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
 # git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/lean/openwrt-passwall-package
-# git clone https://github.com/fw876/helloworld.git package/emortal/helloworld
+git clone https://github.com/fw876/helloworld.git package/emortal/helloworld
 # git clone https://github.com/sbwml/luci-app-mosdns.git package/emortal/luci-app-mosdns
 
