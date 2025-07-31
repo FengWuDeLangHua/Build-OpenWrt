@@ -9,14 +9,6 @@ on:
         default: 'false'
         type: boolean
 
-env:
-  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
-  PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
-  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-  SSH_ACTION: ${{ inputs.SSH_ACTION }}
-  TZ: Asia/Shanghai
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -62,11 +54,11 @@ jobs:
       if: inputs.SSH_ACTION == 'true'
       uses: danshui-git/debugger-action@main
       with:
-        telegaram_token: ${{ env.TELEGRAM_BOT_TOKEN }}
-        telegaram_id: ${{ env.TELEGRAM_CHAT_ID }}
-        push_token: ${{ env.PUSH_PLUS_TOKEN }}
-        notification_code: ${{ env.INFORMATION_NOTICE }}
-        gh_token: ${{ env.REPO_TOKEN }}
+        telegaram_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        telegaram_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+        push_token: ${{ secrets.PUSH_PLUS_TOKEN }}
+        notification_code: ${{ secrets.INFORMATION_NOTICE }}
+        gh_token: ${{ secrets.REPO_TOKEN }}
    
     - name: Update Configuration
       env:
