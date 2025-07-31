@@ -18,7 +18,6 @@ on:
         type: boolean
 
 env:
-  GIT_REPOSITORY: ${{github.repository}}
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   KEEP_WORKFLOWS: ${{inputs.KEEP_WORKFLOWS}}
   KEEP_RELEASES: ${{inputs.KEEP_RELEASES}}
