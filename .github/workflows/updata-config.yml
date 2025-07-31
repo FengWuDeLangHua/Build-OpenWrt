@@ -2,16 +2,9 @@ name: 更新配置文件
 
 on:
   workflow_dispatch:
-    inputs:
-      SSH_ACTION:
-        description: 'SSH远程配置固件'
-        required: false
-        default: 'true'
-        type: boolean
   
 jobs:
   build:
-    # runs-on: ubuntu-22.04
     runs-on: ubuntu-latest
     
     steps:
@@ -32,8 +25,6 @@ jobs:
       env: 
         REPO_URL: https://github.com/immortalwrt/immortalwrt
         REPO_BRANCH: openwrt-24.10
-        # REPO_URL: https://github.com/coolsnowwolf/lede
-        # REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
           
@@ -54,7 +45,6 @@ jobs:
           
     - name: SSH
       # uses: csexton/debugger-action@master
-      if: env.SSH_ACTION == 'true'
       uses: danshui-git/debugger-action@main
       with:
         gh_token: ${{ secrets.REPO_TOKEN }}
