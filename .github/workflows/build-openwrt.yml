@@ -8,10 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
-
-    - name: Free the Ubuntu disk space
+    - name: 释放Ubuntu磁盘空间
       uses: endersonmenezes/free-disk-space@v2
       with:
         remove_android: true
@@ -24,26 +21,29 @@ jobs:
         remove_folders: "/usr/share/swift /usr/share/miniconda /usr/share/az* /usr/share/glade* /usr/local/lib/node_modules /usr/local/share/chromium /usr/local/share/powershell"
         testing: false
 
-    - name: Initialization environment
+    - name: 准备结束
+      uses: actions/checkout@main
+
+    - name: 部署编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
     
-    - name: Clone source code
+    - name: 下载immortalwrt源码
       env: 
         REPO_URL: https://github.com/immortalwrt/immortalwrt
         REPO_BRANCH: openwrt-24.10
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
                   
-    - name: Update & Install feeds
+    - name: 源码包拉取更新
       run: |
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
           
-    - name: Configuration Customization - Build_x86_64
+    - name: 运行自定义文件
       env:
         CONFIG_FILE: '.config'
       run: |
@@ -51,28 +51,28 @@ jobs:
         chmod +x ./customize.sh
         cd openwrt && $GITHUB_WORKSPACE/customize.sh
         make defconfig
-          
-    - name: Download package
-      run: |
-        cd openwrt && make download -j$(nproc)
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
         
-    - name: Cache
+    - name: 缓存加速
       uses: stupidloud/cachewrtbuild@main
       with:
         ccache: 'true'
         mixkey: ${{ matrix.target }}
         clean: ${{ contains(github.event.action, 'nocache') }}
         prefix: ${{ github.workspace }}/openwrt
+        
+    - name: 下载软件包
+      run: |
+        cd openwrt && make download -j$(nproc)
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build firmware
+    - name: 开始编译固件
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 V=s
 
-    - name: Clean File
+    - name: 整理固件文件夹
       run: |
         cd openwrt/bin/targets/*/*
         find -name "*buildinfo*" | xargs -i rm -rf {}
@@ -85,7 +85,7 @@ jobs:
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
           
-    - name : Upload artifact
+    - name : 上传
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
