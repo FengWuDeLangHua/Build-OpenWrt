@@ -94,5 +94,5 @@ jobs:
     - name : 上传
       uses: actions/upload-artifact@master
       with:
-        name: immortalwrt-firmware-$(date +%Y-%m%d-%H%M)
+        name: immortalwrt-$(date +%Y-%m%d-%H%M)
         path: ${{ env.FIRMWARE }}
