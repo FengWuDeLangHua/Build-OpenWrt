@@ -77,6 +77,7 @@ jobs:
         git config --global user.name "FengWuDeLangHua"
         git clone https://user:${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}.git UPLOAD
         cd UPLOAD
+        echo "$(date +%Y年%m月%d号%H时%M分%S秒)" > "./start"
         if [[ -n "$(ls -A "$CONFIG_FILE" 2>/dev/null)" ]]; then
           git rm -rf $CONFIG_FILE
         fi
