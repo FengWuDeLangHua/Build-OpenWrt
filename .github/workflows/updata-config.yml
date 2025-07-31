@@ -73,4 +73,6 @@ jobs:
         git commit -m "编译OpenWrt"
         if git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main; then
           echo "推送成功！"
+        else
+          echo "推送失败！"
         fi
