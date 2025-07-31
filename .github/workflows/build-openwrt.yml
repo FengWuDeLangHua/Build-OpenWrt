@@ -22,7 +22,7 @@ jobs:
         testing: false
 
     - name: 准备结束
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
 
     - name: 部署编译环境
       env:
