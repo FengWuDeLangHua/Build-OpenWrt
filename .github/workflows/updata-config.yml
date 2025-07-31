@@ -18,6 +18,7 @@ on:
         type: boolean
 
 env:
+  GIT_REPOSITORY: ${{github.repository}}
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   TZ: Asia/Shanghai
 
