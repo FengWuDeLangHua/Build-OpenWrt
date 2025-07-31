@@ -57,7 +57,7 @@ jobs:
           
     - name: SSH
       # uses: csexton/debugger-action@master
-      if: env.SSH_ACTION == 'true'
+      if: ${{ github.event.inputs.SSH_ACTION }} == 'true'
       uses: danshui-git/debugger-action@main
       with:
         telegaram_token: ${{ env.TELEGRAM_BOT_TOKEN }}
