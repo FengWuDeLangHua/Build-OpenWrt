@@ -14,6 +14,7 @@ env:
   PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+  SSH_ACTION: ${{ inputs.REPO_BRANCH }}
   TZ: Asia/Shanghai
 
 jobs:
@@ -54,7 +55,6 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh
         cd openwrt && $GITHUB_WORKSPACE/customize.sh
-        echo "${{ inputs.REPO_BRANCH }}"
           
     - name: SSH
       # uses: csexton/debugger-action@master
