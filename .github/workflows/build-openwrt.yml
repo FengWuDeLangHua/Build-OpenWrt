@@ -5,7 +5,6 @@ on:
       
 jobs:
   build:
-    # runs-on: ubuntu-22.04
     runs-on: ubuntu-latest
     
     steps:
@@ -35,8 +34,6 @@ jobs:
       env: 
         REPO_URL: https://github.com/immortalwrt/immortalwrt
         REPO_BRANCH: openwrt-24.10
-        # REPO_URL: https://github.com/coolsnowwolf/lede
-        # REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
                   
