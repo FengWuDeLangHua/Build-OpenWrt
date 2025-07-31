@@ -6,7 +6,7 @@ on:
       KEEP_WORKFLOWS:
         description: '清理workflows,保留[X]个runs不被清理'
         required: true
-        default: '0'
+        default: '5'
       KEEP_RELEASES:
         description: '清理Releases,保留[X]个Releases不被清理'
         required: true
@@ -20,6 +20,9 @@ on:
 env:
   GIT_REPOSITORY: ${{github.repository}}
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  KEEP_WORKFLOWS: ${{inputs.KEEP_WORKFLOWS}}
+  KEEP_RELEASES: ${{inputs.KEEP_RELEASES}}
+  SSH_ACTION: ${{inputs.SSH_ACTION}}
   TZ: Asia/Shanghai
 
 jobs:
