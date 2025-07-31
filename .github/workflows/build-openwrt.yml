@@ -88,10 +88,11 @@ jobs:
         find -name "*profiles*" | xargs -i rm -rf {}
         find -name "*sha256sums*" | xargs -i rm -rf {}
         rm -rf packages
+        rename "s/^immortalwrt/immortalwrt-$(date +%Y-%m%d-%H%M)/" *
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
           
     - name : 上传
       uses: actions/upload-artifact@master
       with:
-        name: immortalwrt-firmware-$(date +%Y-%m-%d-%H-%M-%S)
+        name: immortalwrt-firmware-$(date +%Y-%m%d-%H%M)
         path: ${{ env.FIRMWARE }}
