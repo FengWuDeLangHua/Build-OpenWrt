@@ -47,8 +47,12 @@ jobs:
         echo -e "\n\033[33mcd openwrt && make menuconfig\033[0m"
           
     - name: SSH
-      uses: csexton/debugger-action@master
-      # uses: danshui-git/debugger-action@main
+      # uses: csexton/debugger-action@master
+      if: env.SSH_ACTION == 'true'
+      uses: danshui-git/debugger-action@main
+      with:
+        gh_token: ${{ env.REPO_TOKEN }}
+
    
     - name: Update Configuration
       env:
