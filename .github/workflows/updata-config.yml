@@ -9,6 +9,10 @@ on:
         default: 'false'
         type: boolean
 
+env:
+  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  TZ: Asia/Shanghai
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -53,11 +57,7 @@ jobs:
       if: ${{ inputs.SSH_ACTION }} == 'true'
       uses: danshui-git/debugger-action@main
       with:
-        telegaram_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        telegaram_id: ${{ secrets.TELEGRAM_CHAT_ID }}
-        push_token: ${{ secrets.PUSH_PLUS_TOKEN }}
-        notification_code: ${{ secrets.INFORMATION_NOTICE }}
-        gh_token: ${{ secrets.REPO_TOKEN }}
+        gh_token: ${{ e.REPO_TOKEN }}
    
     - name: Update Configuration
       env:
