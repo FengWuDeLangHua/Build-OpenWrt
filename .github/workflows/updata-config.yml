@@ -50,7 +50,7 @@ jobs:
           
     - name: SSH
       # uses: csexton/debugger-action@master
-      if: inputs.SSH_ACTION == 'true'
+      if: ${{ inputs.SSH_ACTION }} == 'true'
       uses: danshui-git/debugger-action@main
       with:
         telegaram_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
