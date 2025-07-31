@@ -57,7 +57,7 @@ jobs:
       if: ${{ inputs.SSH_ACTION }} == 'true'
       uses: danshui-git/debugger-action@main
       with:
-        gh_token: ${{ e.REPO_TOKEN }}
+        gh_token: ${{ env.REPO_TOKEN }}
    
     - name: Update Configuration
       env:
