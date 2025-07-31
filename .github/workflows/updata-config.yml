@@ -53,11 +53,10 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh
         cd openwrt && $GITHUB_WORKSPACE/customize.sh
-        echo -e "\n\033[33mcd openwrt && make menuconfig\033[0m"
           
     - name: SSH
       # uses: csexton/debugger-action@master
-      if: env.SSH_ACTION == 'true'
+      if: env.SSH_ACTION == true
       uses: danshui-git/debugger-action@main
       with:
         telegaram_token: ${{ env.TELEGRAM_BOT_TOKEN }}
@@ -88,8 +87,4 @@ jobs:
         cp -Rf $GITHUB_WORKSPACE/$CONFIG_FILE $CONFIG_FILE
         git add .
         git commit -m "编译OpenWrt"
-        if git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main; then
-          echo "推送成功！"
-        else
-          echo "推送失败！"
-        fi
+        git push --force "https://${{ secrets.REPO_TOKEN }}@github.com/${{github.repository}}" HEAD:main
