@@ -33,6 +33,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo apt-get install rename
         sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
     
     - name: 下载immortalwrt源码
@@ -89,6 +90,7 @@ jobs:
         find -name "*sha256sums*" | xargs -i rm -rf {}
         rm -rf packages
         [[ -z "${FIRMWARE_DATE}" ]] && echo "FIRMWARE_DATE=$(date +%Y-%m%d-%H%M)" >> ${GITHUB_ENV}
+        rename "s/^immortalwrt/immortalwrt-firmware-${{ env.FIRMWARE_DATE }}/" *
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
           
     - name : 上传
