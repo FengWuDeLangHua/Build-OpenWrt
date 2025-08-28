@@ -65,7 +65,7 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        if [[ "${CONFIG_FILE}" == "true" ]]; then
+        if [[ "${READ_CONGIF}" == "true" ]]; then
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         fi
         chmod +x ./customize.sh
