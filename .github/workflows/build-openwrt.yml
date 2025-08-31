@@ -98,5 +98,5 @@ jobs:
     - name : 上传
       uses: actions/upload-artifact@master
       with:
-        name: ${{ env.FIRMWARE_DATE }}-immortalwrt
+        name: ${{ env.FIRMWARE_DATE }}-openwrt
         path: ${{ env.FIRMWARE }}
