@@ -26,13 +26,16 @@ sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-defaul
 sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci-light/Makefile
 
 #4
-# rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
 rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 # git clone https://github.com/immortalwrt/homeproxy.git feeds/luci/applications/luci-app-homeproxy
-# git clone https://github.com/xiaorouji/openwrt-passwall.git package/lean/openwrt-passwall
-# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/lean/openwrt-passwall-package
 # git clone https://github.com/fw876/helloworld.git package/emortal/helloworld
 # git clone https://github.com/sbwml/luci-app-mosdns.git package/emortal/luci-app-mosdns
+# 移除 openwrt feeds 自带的核心库
+rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
+git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
+# 移除 openwrt feeds 过时的luci版本
+rm -rf feeds/luci/applications/luci-app-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall package/passwall-luci
 
