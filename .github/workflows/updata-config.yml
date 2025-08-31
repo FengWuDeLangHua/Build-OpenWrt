@@ -48,7 +48,7 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
           
-    - name: 下载openWrt源码
+    - name: 下载openwrt源码
       env: 
         # REPO_URL: https://github.com/immortalwrt/immortalwrt
         # REPO_BRANCH: openwrt-24.10
