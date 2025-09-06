@@ -22,7 +22,8 @@ sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/emortal/default-settings/files/99-defa
 #3. Replace with JerryKuKu’s Argon
 # rm -rf feeds/luci/themes/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
+# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-material/g' feeds/luci/collections/luci-light/Makefile
 # sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci-light/Makefile
 
 #4
