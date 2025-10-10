@@ -28,8 +28,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-l
 
 #4
 rm -rf feeds/luci/applications/luci-app-passwall2
-# rm -rf feeds/luci/applications/luci-app-openclash
-rm -rf feeds/luci/applications/luci-app-homeproxy
+rm -rf feeds/luci/applications/luci-app-openclash
+# rm -rf feeds/luci/applications/luci-app-homeproxy
 # git clone https://github.com/immortalwrt/homeproxy.git feeds/luci/applications/luci-app-homeproxy
 # git clone https://github.com/fw876/helloworld.git package/emortal/helloworld
 # git clone https://github.com/sbwml/luci-app-mosdns.git package/emortal/luci-app-mosdns
