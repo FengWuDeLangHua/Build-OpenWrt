@@ -39,8 +39,8 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/passwall-luci
 # 移除 openwrt feeds 自带的核心库
 rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
-# 移除smartdns
+# smartdns
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/applications/luci-app-smartdns
-git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
-git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
+git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
