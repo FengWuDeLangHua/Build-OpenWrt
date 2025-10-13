@@ -67,4 +67,4 @@ rm -rf feeds/luci/applications/luci-app-passwall
 # git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
 
 # nikki
-git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
+# git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
