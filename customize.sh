@@ -30,6 +30,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci-
 rm -rf feeds/luci/applications/luci-app-passwall2
 rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
+rm -rf feeds/luci/applications/luci-app-dae
 # git clone https://github.com/immortalwrt/homeproxy.git feeds/luci/applications/luci-app-homeproxy
 # git clone https://github.com/fw876/helloworld.git package/emortal/helloworld
 # git clone https://github.com/sbwml/luci-app-mosdns.git package/emortal/luci-app-mosdns
@@ -45,4 +46,4 @@ rm -rf feeds/luci/applications/luci-app-passwall
 # git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 # git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
 # nikki
-git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
+# git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
