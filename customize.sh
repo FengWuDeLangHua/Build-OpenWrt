@@ -33,9 +33,6 @@ rm -rf feeds/luci/applications/luci-app-openclash
 # homeproxy
 rm -rf feeds/luci/applications/luci-app-homeproxy
 
-# dae
-rm -rf feeds/luci/applications/luci-app-dae
-
 # passwall
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
