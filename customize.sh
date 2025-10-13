@@ -32,7 +32,7 @@ rm -rf feeds/luci/applications/luci-app-homeproxy
 
 # daed
 rm -rf feeds/luci/applications/luci-app-dae
-# rm -rf feeds/luci/applications/luci-app-daed
+rm -rf feeds/luci/applications/luci-app-daed
 # git clone https://github.com/QiuSimons/luci-app-daed package/dae
 # mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
 # apt-get update
@@ -67,4 +67,4 @@ rm -rf feeds/luci/applications/luci-app-passwall
 # git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
 
 # nikki
-# git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
+git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
