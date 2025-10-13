@@ -31,7 +31,7 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 
 # daed
-# rm -rf feeds/luci/applications/luci-app-dae
+rm -rf feeds/luci/applications/luci-app-dae
 # rm -rf feeds/luci/applications/luci-app-daed
 # git clone https://github.com/QiuSimons/luci-app-daed package/dae
 # mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
