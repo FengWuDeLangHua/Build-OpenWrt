@@ -49,7 +49,7 @@ jobs:
       run: |
         cd openwrt
         sed -i 's!src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05!#src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05!g' feeds.conf.default
-        sed -i 's!#src-git luci https://github.com/coolsnowwolf/luci.git!src-git luci https://github.com/coolsnowwolf/luci.git!g' feeds.conf.default
+        sed -i '2s!#src-git luci https://github.com/coolsnowwolf/luci.git!src-git luci https://github.com/coolsnowwolf/luci.git/g' feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
           
