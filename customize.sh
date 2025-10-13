@@ -48,10 +48,10 @@ echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
 echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
 echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
 echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
-echo -e "\nCONFIG_PACKAGE_daed-geoip=y" >> .config
-echo -e "\nCONFIG_PACKAGE_daed-geosite=y" >> .config
-echo -e "\nCONFIG_PACKAGE_v2ray-geoip=y" >> .config
-echo -e "\nCONFIG_PACKAGE_v2ray-geosite=y" >> .config
+# echo -e "\nCONFIG_PACKAGE_daed-geoip=y" >> .config
+# echo -e "\nCONFIG_PACKAGE_daed-geosite=y" >> .config
+# echo -e "\nCONFIG_PACKAGE_v2ray-geoip=y" >> .config
+# echo -e "\nCONFIG_PACKAGE_v2ray-geosite=y" >> .config
 
 # passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
