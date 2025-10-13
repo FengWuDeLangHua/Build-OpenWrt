@@ -38,16 +38,16 @@ rm -rf feeds/luci/applications/luci-app-daed
 # apt-get update
 # apt-get install -y clang-15 llvm-15 npm
 # npm install -g pnpm
-echo -e "\nCONFIG_DEVEL=y" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
-echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
-echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
-echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
-echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
-echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
-echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
+# echo -e "\nCONFIG_DEVEL=y" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
+# echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
+# echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
+# echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
+# echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
+# echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
+# echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
 # echo -e "\nCONFIG_PACKAGE_daed-geoip=y" >> .config
 # echo -e "\nCONFIG_PACKAGE_daed-geosite=y" >> .config
 # echo -e "\nCONFIG_PACKAGE_v2ray-geoip=y" >> .config
