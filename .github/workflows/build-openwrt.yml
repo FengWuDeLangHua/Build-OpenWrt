@@ -53,6 +53,7 @@ jobs:
         # sed -i 's:#src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-24.10:src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-24.10:g' feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+        make package/luci-app-nikki/compile
           
     - name: 运行自定义文件
       env:
