@@ -10,6 +10,8 @@
 # sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/luci2/bin/config_generate
 # immortalwrt
 # sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
+# Lienol
+sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 
 #2. Clear the login password
 # lede
@@ -17,8 +19,8 @@
 # sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/lean/default-settings/files/zzz-default-settings
 # immortalwrt
 # sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/emortal/default-settings/files/99-default-settings
-
-
+# Lienol
+sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/default-settings/files/zzz-default-settings
 
 #3. Replace with JerryKuKu’s Argon
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
