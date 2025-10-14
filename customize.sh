@@ -12,8 +12,6 @@
 # sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 # Lienol
 # sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
-# openwrt
-sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 
 #2. Clear the login password
 # lede
@@ -25,8 +23,13 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 # sed -i '/CYXluq4wUazHjmCDBCqXF/d' package/default-settings/files/zzz-default-settings
 
 #3. Replace with JerryKuKu’s Argon
+# immortalwrt
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
+# lede
 # sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci-light/Makefile
+# Lienol
+git clone https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
 
 #4
 # openclash
