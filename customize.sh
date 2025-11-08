@@ -39,8 +39,8 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 
 # daed
-# rm -rf feeds/luci/applications/luci-app-dae
-# rm -rf feeds/luci/applications/luci-app-daed
+rm -rf feeds/luci/applications/luci-app-dae
+rm -rf feeds/luci/applications/luci-app-daed
 # rm -rf feeds/packages/net/dae
 # rm -rf feeds/packages/net/daed
 # git clone https://github.com/QiuSimons/luci-app-daed package/dae
