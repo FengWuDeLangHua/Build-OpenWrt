@@ -45,11 +45,8 @@ rm -rf feeds/packages/net/dae
 rm -rf feeds/packages/net/daed
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
-# apt-get update
-# apt-get install -y clang-15 llvm-15 npm
-# npm install -g pnpm
 apt-get update
-apt-get install -y clang llvm npm
+apt-get install -y clang-15 llvm-15 npm
 npm install -g pnpm
 echo -e "\nCONFIG_DEVEL=y" >> .config
 echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
