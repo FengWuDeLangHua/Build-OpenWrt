@@ -45,9 +45,11 @@ rm -rf feeds/packages/net/dae
 rm -rf feeds/packages/net/daed
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
 mkdir -p Package/libcron && wget -O Package/libcron/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/libs/libcron/Makefile
-sudo -E apt-get -qq update
-sudo -E apt-get -qq install clang llvm npm
+sudo apt-get -qq update
+sudo apt-get -qq install clang llvm npm squashfs-tools jq dos2unix
 sudo npm install -g pnpm
+sudo npm install -g n
+sudo npm i taze -g
 echo -e "\nCONFIG_DEVEL=y" >> .config
 echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
 echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
