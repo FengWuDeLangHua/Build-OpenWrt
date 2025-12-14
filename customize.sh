@@ -33,7 +33,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-l
 
 #4
 # openclash
-rm -rf feeds/luci/applications/luci-app-openclash
+# rm -rf feeds/luci/applications/luci-app-openclash
 
 # homeproxy
 rm -rf feeds/luci/applications/luci-app-homeproxy
