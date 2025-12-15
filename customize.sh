@@ -48,16 +48,16 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae
 sudo apt-get update
 sudo apt-get install clang-15 llvm-15 npm
 sudo npm install -g pnpm
-echo -e "\nCONFIG_DEVEL=y" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
-echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
-echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
-echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
-echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
-echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
-echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
+echo "\nCONFIG_DEVEL=y" >> .config
+echo "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
+echo "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
+echo "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
+echo "\nCONFIG_KERNEL_CGROUPS=y" >> .config
+echo "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
+echo "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
+echo "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
+echo "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
+echo "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
 
 # passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
