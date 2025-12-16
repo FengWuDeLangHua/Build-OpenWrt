@@ -73,8 +73,6 @@ jobs:
     - name: 下载软件包
       run: |
         cd openwrt && make download -j$(nproc)
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
 
     - name: 开始编译固件
       run: |
