@@ -39,32 +39,32 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 
 # golang
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 # daed
 rm -rf feeds/luci/applications/luci-app-dae
 rm -rf feeds/luci/applications/luci-app-daed
-rm -rf feeds/packages/net/dae
-rm -rf feeds/packages/net/daed
-git clone https://github.com/QiuSimons/luci-app-daed package/dae
-sudo apt-get update
-sudo apt-get install -y clang llvm npm
-sudo npm install -g pnpm
-echo -e "\nCONFIG_DEVEL=y" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
-echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
-echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
-echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
-echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
-echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
-echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
+# rm -rf feeds/packages/net/dae
+# rm -rf feeds/packages/net/daed
+# git clone https://github.com/QiuSimons/luci-app-daed package/dae
+# sudo apt-get update
+# sudo apt-get install -y clang llvm npm
+# sudo npm install -g pnpm
+# echo -e "\nCONFIG_DEVEL=y" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
+# echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
+# echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
+# echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
+# echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
+# echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
+# echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
 
 # passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
-rm -rf feeds/luci/applications/luci-app-passwall
+# rm -rf feeds/luci/applications/luci-app-passwall
 # rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
 # git clone https://github.com/xiaorouji/openwrt-passwall package/passwall-luci
 # git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
