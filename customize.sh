@@ -39,6 +39,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-l
 #4
 
 # openwrt
+sudo apt-get install git-svn
 gitsvn https://github.com/immortalwrt/luci/tree/openwrt-25.12/applications/luci-app-arpbind package/luci-app-arpbind
 gitsvn https://github.com/immortalwrt/luci/tree/openwrt-25.12/applications/luci-app-autoreboot package/luci-app-autoreboot
 
