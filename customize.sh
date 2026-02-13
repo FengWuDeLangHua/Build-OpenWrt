@@ -41,8 +41,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-l
 # openwrt
 sudo apt-get update
 sudo apt-get install subversion
-svn checkout https://github.com/immortalwrt/luci/branches/openwrt-25.12/applications/luci-app-arpbind feeds/luci/applications/luci-app-arpbind
-svn checkout https://github.com/immortalwrt/luci/branches/openwrt-25.12/applications/luci-app-autoreboot feeds/luci/applications/luci-app-autoreboot
+svn checkout https://github.com/immortalwrt/luci.git/branches/openwrt-25.12/applications/luci-app-arpbind feeds/luci/applications/luci-app-arpbind
+svn checkout https://github.com/immortalwrt/luci.git/branches/openwrt-25.12/applications/luci-app-autoreboot feeds/luci/applications/luci-app-autoreboot
 
 # openclash
 # rm -rf feeds/luci/applications/luci-app-openclash
