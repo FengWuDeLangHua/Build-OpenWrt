@@ -37,6 +37,11 @@ git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
 
 #4
+
+# openwrt
+gitsvn https://github.com/immortalwrt/luci/tree/openwrt-25.12/applications/luci-app-arpbind feeds/luci/applications/luci-app-arpbind
+gitsvn https://github.com/immortalwrt/luci/tree/openwrt-25.12/applications/luci-app-autoreboot feeds/luci/applications/luci-app-autoreboot
+
 # openclash
 # rm -rf feeds/luci/applications/luci-app-openclash
 
