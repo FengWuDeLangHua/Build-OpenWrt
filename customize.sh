@@ -43,8 +43,8 @@ wget -O luci.zip https://github.com/immortalwrt/luci/archive/refs/heads/openwrt-
 unzip -q luci.zip
 mv luci-openwrt-25.12/applications/luci-app-arpbind package/
 mv luci-openwrt-25.12/applications/luci-app-autoreboot package/
-sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-arpbind
-sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-autoreboot
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-arpbind/Makefile
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-autoreboot/Makefile
 rm -rf luci-openwrt-25.12 luci.zip
 
 # openclash
