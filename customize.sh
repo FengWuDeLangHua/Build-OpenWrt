@@ -41,8 +41,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-l
 # openwrt
 wget -O luci.zip https://github.com/immortalwrt/luci/archive/refs/heads/openwrt-25.12.zip
 unzip -q luci.zip
-mv luci-openwrt-25.12/applications/luci-app-arpbind ./
-mv luci-openwrt-25.12/applications/luci-app-autoreboot ./
+mv luci-openwrt-25.12/applications/luci-app-arpbind feeds/luci/applications/
+mv luci-openwrt-25.12/applications/luci-app-autoreboot feeds/luci/applications/
 rm -rf luci-openwrt-25.12 luci.zip
 
 # openclash
