@@ -81,7 +81,6 @@ jobs:
         fi
         chmod +x ./diy2.sh
         cd openwrt && $GITHUB_WORKSPACE/diy2.sh
-        ./scripts/feeds install -a
           
     - name: SSH远程连接
       # uses: csexton/debugger-action@master
