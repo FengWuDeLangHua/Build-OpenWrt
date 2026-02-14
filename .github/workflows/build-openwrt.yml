@@ -62,6 +62,7 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh
         cd openwrt && $GITHUB_WORKSPACE/customize.sh
+        ./scripts/feeds install -a
         make defconfig
         
     - name: 缓存加速
