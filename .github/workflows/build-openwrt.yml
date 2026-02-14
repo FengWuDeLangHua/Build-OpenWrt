@@ -49,9 +49,7 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
           
-    - name: 运行自定义文件2
-      env:
-        CONFIG_FILE: '.config'
+    - name: 运行自定义文件
       run: |
         chmod +x ./diy1.sh && chmod +x ./diy2.sh
         cd openwrt
@@ -60,6 +58,8 @@ jobs:
         $GITHUB_WORKSPACE/diy2.sh
 
     - name: 源码依赖链接
+      env:
+        CONFIG_FILE: '.config'
       run: |
         cd openwrt
         ./scripts/feeds update -a
