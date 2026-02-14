@@ -69,9 +69,6 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/diy1.sh
         ./scripts/feeds update -a
-        if [[ "${READ_CONGIF}" == "true" ]]; then
-          [ -e $CONFIG_FILE ] && mv $CONFIG_FILE .config
-        fi
         $GITHUB_WORKSPACE/diy2.sh
         
     - name: 源码依赖链接
@@ -79,6 +76,9 @@ jobs:
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+        if [[ "${READ_CONGIF}" == "true" ]]; then
+          [ -e $CONFIG_FILE ] && mv $CONFIG_FILE .config
+        fi
         
     - name: SSH远程连接
       # uses: csexton/debugger-action@master
