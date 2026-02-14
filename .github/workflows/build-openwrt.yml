@@ -48,25 +48,22 @@ jobs:
         REPO_BRANCH: openwrt-25.12
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-
-    - name: 运行自定义文件1
-      run: |
-        chmod +x ./diy1.sh
-        cd openwrt && $GITHUB_WORKSPACE/diy1.sh
-            
-    - name: 源码依赖链接
-      run: |
-        cd openwrt
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
           
     - name: 运行自定义文件2
       env:
         CONFIG_FILE: '.config'
       run: |
+        chmod +x ./diy1.sh
+        cd openwrt && $GITHUB_WORKSPACE/diy1.sh
+        ./scripts/feeds update -a
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./diy2.sh
         cd openwrt && $GITHUB_WORKSPACE/diy2.sh
+
+    - name: 源码依赖链接
+      run: |
+        cd openwrt
+        ./scripts/feeds update -a
         ./scripts/feeds install -a
         make defconfig
         
