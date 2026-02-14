@@ -91,7 +91,8 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        cd openwrt && make defconfig
+        cd openwrt
+        make defconfig
         ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/$CONFIG_FILE
           
     - name: 提交并推送到仓库
