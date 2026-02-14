@@ -57,7 +57,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/diy1.sh
         ./scripts/feeds update -a
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE .config
         $GITHUB_WORKSPACE/diy2.sh
 
     - name: 源码依赖链接
