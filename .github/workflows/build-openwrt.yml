@@ -64,7 +64,7 @@ jobs:
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE .config
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         make defconfig
         
     - name: 缓存加速
