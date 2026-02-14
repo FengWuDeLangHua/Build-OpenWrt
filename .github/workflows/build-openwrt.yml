@@ -54,7 +54,7 @@ jobs:
         chmod +x ./diy1.sh
         cd openwrt && $GITHUB_WORKSPACE/diy1.sh
             
-    - name: 源码依赖拉取
+    - name: 源码依赖链接
       run: |
         cd openwrt
         ./scripts/feeds update -a
