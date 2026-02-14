@@ -13,7 +13,7 @@
 # Lienol
 # sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 # openwrt
-sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
+# sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 
 #2. Clear the login password
 # immortalwrt
@@ -33,19 +33,19 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 # git clone https://github.com/jerrykuku/luci-theme-argon feeds/luci/themes/luci-theme-argon
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
 # openwrt
-git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
+# git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
 
 #4
 
 # openwrt
-wget -O luci.zip https://github.com/immortalwrt/luci/archive/refs/heads/openwrt-25.12.zip
-unzip -q luci.zip
-mv luci-openwrt-25.12/applications/luci-app-arpbind package/
-mv luci-openwrt-25.12/applications/luci-app-autoreboot package/
-sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-arpbind/Makefile
-sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-autoreboot/Makefile
-rm -rf luci-openwrt-25.12 luci.zip
+# wget -O luci.zip https://github.com/immortalwrt/luci/archive/refs/heads/openwrt-25.12.zip
+# unzip -q luci.zip
+# mv luci-openwrt-25.12/applications/luci-app-arpbind package/
+# mv luci-openwrt-25.12/applications/luci-app-autoreboot package/
+# sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-arpbind/Makefile
+# sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-autoreboot/Makefile
+# rm -rf luci-openwrt-25.12 luci.zip
 
 # openclash
 # rm -rf feeds/luci/applications/luci-app-openclash
@@ -80,15 +80,15 @@ rm -rf luci-openwrt-25.12 luci.zip
 # passwall
 # rm -rf feeds/luci/applications/luci-app-passwall2
 # rm -rf feeds/luci/applications/luci-app-passwall
-rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
+# rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
+# git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
+# git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 
 # smartdns
-rm -rf feeds/packages/net/smartdns
-rm -rf feeds/luci/applications/luci-app-smartdns
-git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
-git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+# rm -rf feeds/packages/net/smartdns
+# rm -rf feeds/luci/applications/luci-app-smartdns
+# git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+# git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
 
 # nikki
 # git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
