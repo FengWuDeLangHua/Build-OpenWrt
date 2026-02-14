@@ -65,13 +65,8 @@ jobs:
       run: |
         chmod +x ./diy1.sh
         cd openwrt && $GITHUB_WORKSPACE/diy1.sh
-            
-    - name: 源码依赖链接
-      run: |
-        cd openwrt
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
-          
+      
     - name: 运行自定义文件2
       env:
         CONFIG_FILE: '.config'
@@ -81,7 +76,13 @@ jobs:
         fi
         chmod +x ./diy2.sh
         cd openwrt && $GITHUB_WORKSPACE/diy2.sh
-          
+        
+    - name: 源码依赖链接
+      run: |
+        cd openwrt
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        
     - name: SSH远程连接
       # uses: csexton/debugger-action@master
       if: env.SSH_ACTION == 'true'
