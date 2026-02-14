@@ -72,7 +72,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
           
-    - name: 运行自定义文件
+    - name: 运行自定义文件2
       env:
         CONFIG_FILE: '.config'
       run: |
