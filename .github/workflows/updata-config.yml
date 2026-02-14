@@ -65,14 +65,14 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        chmod +x ./diy1.sh
-        cd openwrt && $GITHUB_WORKSPACE/diy1.sh
+        chmod +x ./diy1.sh && chmod +x ./diy2.sh
+        cd openwrt
+        $GITHUB_WORKSPACE/diy1.sh
         ./scripts/feeds update -a
         if [[ "${READ_CONGIF}" == "true" ]]; then
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         fi
-        chmod +x ./diy2.sh
-        cd openwrt && $GITHUB_WORKSPACE/diy2.sh
+        $GITHUB_WORKSPACE/diy2.sh
         
     - name: 源码依赖链接
       run: |
