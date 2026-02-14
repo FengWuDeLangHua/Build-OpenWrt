@@ -57,7 +57,6 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/diy1.sh
         ./scripts/feeds update -a
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE .config
         $GITHUB_WORKSPACE/diy2.sh
 
     - name: 源码依赖链接
@@ -65,6 +64,7 @@ jobs:
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE .config
         make defconfig
         
     - name: 缓存加速
