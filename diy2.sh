@@ -32,8 +32,8 @@ git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
 
 # golang
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang -b 1.25 feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/kenzok8/golang -b 1.25 feeds/packages/lang/golang
 
 # arpbind/autoreboot
 wget -O luci.zip https://github.com/immortalwrt/luci/archive/refs/heads/openwrt-25.12.zip
@@ -55,20 +55,20 @@ rm -rf luci-openwrt-25.12 luci.zip
 # rm -rf feeds/luci/applications/luci-app-daed
 # rm -rf feeds/packages/net/dae
 # rm -rf feeds/packages/net/daed
-git clone https://github.com/QiuSimons/luci-app-daed package/dae
-sudo apt-get update
-sudo apt-get install -y clang llvm npm
-sudo npm install -g pnpm
-echo -e "\nCONFIG_DEVEL=y" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
-echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
-echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
-echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
-echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
-echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
-echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
-echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
+# git clone https://github.com/QiuSimons/luci-app-daed package/dae
+# sudo apt-get update
+# sudo apt-get install -y clang llvm npm
+# sudo npm install -g pnpm
+# echo -e "\nCONFIG_DEVEL=y" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
+# echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
+# echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
+# echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
+# echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
+# echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
+# echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
+# echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
 
 # smartdns
 # rm -rf feeds/packages/net/smartdns
