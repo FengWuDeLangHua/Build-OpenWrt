@@ -74,8 +74,8 @@ jobs:
         if [[ "${READ_CONGIF}" == "true" ]]; then
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         fi
-        chmod +x ./customize.sh
-        cd openwrt && $GITHUB_WORKSPACE/customize.sh
+        chmod +x ./diy2.sh
+        cd openwrt && $GITHUB_WORKSPACE/diy2.sh
           
     - name: SSH远程连接
       # uses: csexton/debugger-action@master
