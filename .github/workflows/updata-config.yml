@@ -71,7 +71,8 @@ jobs:
     - name: 运行自定义文件2
       run: |
         chmod +x ./diy2.sh
-        cd openwrt && $GITHUB_WORKSPACE/diy2.sh
+        cd openwrt
+        $GITHUB_WORKSPACE/diy2.sh
 
     - name: 源码依赖链接
       run: |
