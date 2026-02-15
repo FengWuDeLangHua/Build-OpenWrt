@@ -80,15 +80,13 @@ jobs:
         ./scripts/feeds install -a
 
     - name: config加载
+      if: env.READ_CONGIF == 'true'
       env:
         CONFIG_FILE: '.config'
       run: |
-        if [[ "${READ_CONGIF}" == "true" ]]; then
-          [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        fi
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
           
     - name: SSH远程连接
-      # uses: csexton/debugger-action@master
       if: env.SSH_ACTION == 'true'
       uses: danshui-git/debugger-action@main
       with:
