@@ -71,10 +71,10 @@ rm -rf luci-openwrt-25.12 luci.zip
 # echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
 
 # smartdns
-# rm -rf feeds/packages/net/smartdns
-# rm -rf feeds/luci/applications/luci-app-smartdns
-# git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
-# git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
+rm -rf feeds/packages/net/smartdns
+rm -rf feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/pymumu/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns feeds/packages/net/smartdns
 
 # nikki
 # git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
