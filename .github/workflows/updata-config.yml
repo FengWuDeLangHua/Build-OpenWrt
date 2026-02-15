@@ -60,26 +60,23 @@ jobs:
         REPO_BRANCH: openwrt-25.12
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-      
-    - name: 运行自定义文件
-      run: |
-        chmod +x ./diy1.sh && chmod +x ./diy2.sh
-        cd openwrt
-        $GITHUB_WORKSPACE/diy1.sh
-        ./scripts/feeds update -a
-        $GITHUB_WORKSPACE/diy2.sh
-        
-    - name: 源码依赖链接
-      env:
-        CONFIG_FILE: '.config'
+          
+    - name: 源码依赖拉取
       run: |
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+          
+    - name: 运行自定义文件
+      env:
+        CONFIG_FILE: '.config'
+      run: |
         if [[ "${READ_CONGIF}" == "true" ]]; then
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         fi
-        
+        chmod +x ./customize.sh
+        cd openwrt && $GITHUB_WORKSPACE/customize.sh
+          
     - name: SSH远程连接
       # uses: csexton/debugger-action@master
       if: env.SSH_ACTION == 'true'
@@ -91,8 +88,7 @@ jobs:
       env:
         CONFIG_FILE: '.config'
       run: |
-        cd openwrt
-        make defconfig
+        cd openwrt && make defconfig
         ./scripts/diffconfig.sh > ${GITHUB_WORKSPACE}/$CONFIG_FILE
           
     - name: 提交并推送到仓库
