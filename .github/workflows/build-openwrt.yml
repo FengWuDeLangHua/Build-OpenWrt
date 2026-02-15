@@ -1,4 +1,4 @@
-ame: 编译OpenWrt
+name: 编译OpenWrt
 
 on:
   workflow_dispatch:
