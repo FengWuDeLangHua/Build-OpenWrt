@@ -73,6 +73,7 @@ jobs:
         CONFIG_FILE: '.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        cd openwrt
         make defconfig
         
     - name: 缓存加速
