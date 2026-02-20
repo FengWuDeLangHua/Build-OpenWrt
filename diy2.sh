@@ -78,3 +78,6 @@ echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
 
 # nikki
 # git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
+
+# passwall
+
