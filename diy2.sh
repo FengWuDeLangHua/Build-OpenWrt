@@ -58,9 +58,9 @@ rm -rf feeds/luci/applications/luci-app-daed
 rm -rf feeds/packages/net/dae
 rm -rf feeds/packages/net/daed
 git clone https://github.com/QiuSimons/luci-app-daed package/dae
-apt-get update
-apt-get install -y clang llvm npm
-npm install -g pnpm
+sudo -E apt-get -qq update -y
+sudo -E apt-get -qq install -y clang llvm npm
+sudo npm install -g pnpm
 echo -e "\nCONFIG_DEVEL=y" >> .config
 echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
 echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
