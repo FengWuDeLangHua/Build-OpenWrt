@@ -34,7 +34,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
-        sudo apt-get install rename
+        sudo -E apt-get -qq install -y rename
     
     - name: 下载openwrt源码
       env: 
