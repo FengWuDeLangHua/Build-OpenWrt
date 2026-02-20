@@ -80,4 +80,5 @@ echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
 # git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
 
 # passwall
+rm -rf feeds/luci/applications/luci-app-passwall
 
