@@ -51,24 +51,24 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 
 # daed
-# rm -rf feeds/luci/applications/luci-app-dae
-# rm -rf feeds/luci/applications/luci-app-daed
-# rm -rf feeds/packages/net/dae
-# rm -rf feeds/packages/net/daed
-# git clone https://github.com/QiuSimons/luci-app-daed package/dae
-# sudo apt-get update
-# sudo apt-get install -y clang llvm npm
-# sudo npm install -g pnpm
-# echo -e "\nCONFIG_DEVEL=y" >> .config
-# echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
-# echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
-# echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
-# echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
-# echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
-# echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
-# echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
-# echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
-# echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
+rm -rf feeds/luci/applications/luci-app-dae
+rm -rf feeds/luci/applications/luci-app-daed
+rm -rf feeds/packages/net/dae
+rm -rf feeds/packages/net/daed
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
+apt-get update
+apt-get install -y clang llvm npm
+npm install -g pnpm
+echo -e "\nCONFIG_DEVEL=y" >> .config
+echo -e "\nCONFIG_KERNEL_DEBUG_INFO=y" >> .config
+echo -e "\nCONFIG_KERNEL_DEBUG_INFO_REDUCED=n" >> .config
+echo -e "\nCONFIG_KERNEL_DEBUG_INFO_BTF=y" >> .config
+echo -e "\nCONFIG_KERNEL_CGROUPS=y" >> .config
+echo -e "\nCONFIG_KERNEL_CGROUP_BPF=y" >> .config
+echo -e "\nCONFIG_KERNEL_BPF_EVENTS=y" >> .config
+echo -e "\nCONFIG_BPF_TOOLCHAIN_HOST=y" >> .config
+echo -e "\nCONFIG_KERNEL_XDP_SOCKETS=y" >> .config
+echo -e "\nCONFIG_PACKAGE_kmod-xdp-sockets-diag=y" >> .config
 
 # smartdns
 # rm -rf feeds/packages/net/smartdns
