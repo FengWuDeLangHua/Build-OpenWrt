@@ -33,7 +33,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-l
 
 # golang
 # rm -rf feeds/packages/lang/golang
-# git clone https://github.com/kenzok8/golang -b 1.25 feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 # arpbind/autoreboot
 # wget -O luci.zip https://github.com/immortalwrt/luci/archive/refs/heads/openwrt-25.12.zip
