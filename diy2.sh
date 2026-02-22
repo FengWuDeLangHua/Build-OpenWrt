@@ -59,19 +59,6 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae
 sudo -E apt-get -qq update -y
 sudo -E apt-get -qq install -y clang llvm npm
 sudo npm install -g pnpm
-echo '
-CONFIG_DEVEL=y
-CONFIG_KERNEL_DEBUG_INFO=y
-CONFIG_KERNEL_DEBUG_INFO_REDUCED=n
-CONFIG_KERNEL_DEBUG_INFO_BTF=y
-CONFIG_KERNEL_CGROUPS=y
-CONFIG_KERNEL_CGROUP_BPF=y
-CONFIG_KERNEL_BPF_EVENTS=y
-CONFIG_BPF_TOOLCHAIN_HOST=y
-CONFIG_KERNEL_XDP_SOCKETS=y
-CONFIG_PACKAGE_kmod-xdp-sockets-diag=y
-' >> .config
-
 
 # smartdns
 # rm -rf feeds/packages/net/smartdns
@@ -84,4 +71,3 @@ CONFIG_PACKAGE_kmod-xdp-sockets-diag=y
 
 # passwall
 rm -rf feeds/luci/applications/luci-app-passwall
-
