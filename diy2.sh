@@ -35,15 +35,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-l
 # rm -rf feeds/packages/lang/golang
 # git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
-# arpbind/autoreboot
-# wget -O luci.zip https://github.com/immortalwrt/luci/archive/refs/heads/openwrt-25.12.zip
-# unzip -q luci.zip
-# mv luci-openwrt-25.12/applications/luci-app-arpbind package/
-# mv luci-openwrt-25.12/applications/luci-app-autoreboot package/
-# sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-arpbind/Makefile
-# sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-autoreboot/Makefile
-# rm -rf luci-openwrt-25.12 luci.zip
-
 # openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 
@@ -55,10 +46,10 @@ rm -rf feeds/luci/applications/luci-app-dae
 rm -rf feeds/luci/applications/luci-app-daed
 rm -rf feeds/packages/net/dae
 rm -rf feeds/packages/net/daed
-git clone https://github.com/QiuSimons/luci-app-daed package/dae
 sudo -E apt-get -qq update -y
 sudo -E apt-get -qq install -y clang llvm npm
 sudo npm install -g pnpm
+git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 # smartdns
 # rm -rf feeds/packages/net/smartdns
