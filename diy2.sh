@@ -42,14 +42,14 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 
 # daed
-rm -rf feeds/luci/applications/luci-app-dae
-rm -rf feeds/luci/applications/luci-app-daed
-rm -rf feeds/packages/net/dae
-rm -rf feeds/packages/net/daed
-sudo -E apt-get -qq update -y
-sudo -E apt-get -qq install -y clang llvm npm
-sudo npm install -g pnpm
-git clone https://github.com/QiuSimons/luci-app-daed package/dae
+# rm -rf feeds/luci/applications/luci-app-dae
+# rm -rf feeds/luci/applications/luci-app-daed
+# rm -rf feeds/packages/net/dae
+# rm -rf feeds/packages/net/daed
+# sudo -E apt-get -qq update -y
+# sudo -E apt-get -qq install -y clang llvm npm
+# sudo npm install -g pnpm
+# git clone https://github.com/QiuSimons/luci-app-daed package/dae
 
 # smartdns
 # rm -rf feeds/packages/net/smartdns
@@ -61,4 +61,4 @@ git clone https://github.com/QiuSimons/luci-app-daed package/dae
 # git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
 
 # passwall
-rm -rf feeds/luci/applications/luci-app-passwall
+# rm -rf feeds/luci/applications/luci-app-passwall
