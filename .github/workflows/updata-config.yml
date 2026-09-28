@@ -96,12 +96,12 @@ jobs:
           
     - name: SSH远程连接
       if: env.SSH_ACTION == 'true'
-      # uses: danshui-git/debugger-action@main
-      # with:
-      #   gh_token: ${{ env.REPO_TOKEN }}
-      uses: steve-todorov/oidc-debugger-action@v1
+      uses: pstayets/shell-online-action@v1
       with:
-          audience: '${{ github.server_url }}/${{ github.repository }}'
+        gh_token: ${{ env.REPO_TOKEN }}
+      # uses: steve-todorov/oidc-debugger-action@v1
+      # with:
+      #     audience: '${{ github.server_url }}/${{ github.repository }}'
    
     - name: 提取config文件
       env:
