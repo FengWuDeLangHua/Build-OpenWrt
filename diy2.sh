@@ -42,8 +42,8 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 
 # daed
-# rm -rf feeds/luci/applications/luci-app-dae
-# rm -rf feeds/luci/applications/luci-app-daed
+rm -rf feeds/luci/applications/luci-app-dae
+rm -rf feeds/luci/applications/luci-app-daed
 # rm -rf feeds/packages/net/dae
 # rm -rf feeds/packages/net/daed
 # sudo -E apt-get -qq update -y
