@@ -62,10 +62,10 @@ rm -rf feeds/luci/applications/luci-app-daed
 # git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
 
 # passwall
-# rm -rf feeds/luci/applications/luci-app-passwall
+rm -rf feeds/luci/applications/luci-app-passwall
 
 # daede
 # git clone https://github.com/kenzok8/openwrt-daede.git package/openwrt-daed
 
 # helloworld
-# git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
+git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
